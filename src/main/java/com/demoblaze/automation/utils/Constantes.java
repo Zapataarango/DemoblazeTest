@@ -9,4 +9,5 @@ public class Constantes {
     public static final String EDGE = "Edge";
     public static final String CHROME = "Chrome";
     public static final String URL = "https://www.demoblaze.com/index.html";
+    public static final String PURCHASE_CONFIRMATION = "Thank you for your purchase!";
 }

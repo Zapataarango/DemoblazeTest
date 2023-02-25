@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.thucydides.core.annotations.Step;
 
 import static com.demoblaze.automation.userInterfaces.DemoBlazePage.*;
 
@@ -20,6 +21,7 @@ public class BuyCart implements Task {
         return Tasks.instrumented(BuyCart.class, user);
     }
 
+    @Step("{0} buys the cart.")
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -34,7 +36,7 @@ public class BuyCart implements Task {
                 Enter.theValue(user.getCreditCard()).into(INPUT_CREDIT_CARD),
                 Enter.theValue(user.getMonth()).into(INPUT_MONTH),
                 Enter.theValue(user.getYear()).into(INPUT_YEAR),
-                Click.on(BTN_PURCHASE),
-                Click.on(BTN_OK));
+               Click.on(BTN_PURCHASE)
+        );
     }
 }

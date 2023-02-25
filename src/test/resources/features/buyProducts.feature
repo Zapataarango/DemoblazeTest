@@ -8,4 +8,4 @@ Feature: Purchase of a Samsung Galaxy S6 in Demoblaze web
     Given "userAntonio" logs with credentials
     When buys a list "productsPepe"
     When "userAntonio" shoulds see the product in the cart
-    Then bbbbbbbbb
+    Then shoulds see message indicating the purchase is done
