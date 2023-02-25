@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="69c81d087d65c94ab1203fd6e5a7a09d35535fd04c485008420fc1831adf9e70.html">Purchase Of A Samsung Galaxy S6 In Demoblaze Web</a></span>
+                > <span class="truncate-60"><a
+                    href="627534bf80994545dd436d58b981c783f7a5d60e8151b93db2d4980783406c2e.html">Buy samsung </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 24-02-2023 20:21</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Purchase Of A Samsung Galaxy S6 In Demoblaze Web </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Me as a normal user<br />
+want to buy a cellphone in demoblaze<br />
+to verify the correct functioning
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Buy samsung
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="56add7446423c6f620d42d359d6bb2414da7571a0ccac7d2834f2e59b0314340.png" title=" Given &quot;userAntonio&quot; logs with credentials" width="1366"/>
+                <img src="bac5bcad4b833dc1773189d9bf33a963605211a35ed0a9c55baa302b9b413803.png" title=" Automation login" width="1366"/>
+                <img src="bac5bcad4b833dc1773189d9bf33a963605211a35ed0a9c55baa302b9b413803.png" title=" Automation clicks on Button to login" width="1366"/>
+                <img src="d8c5821640ea628bf20b4420ef30b4f85f0963a3d2af2a30ad93235bc5212073.png" title=" Automation clicks on Button to login" width="1366"/>
+                <img src="d8c5821640ea628bf20b4420ef30b4f85f0963a3d2af2a30ad93235bc5212073.png" title=" Automation clicks on Button to login (completed)" width="1366"/>
+                <img src="e1d19377239d421f11891205fb46e4267da061ce68599e58b054fe7eba8a0951.png" title=" Automation enters 'pipe' into username input" width="1366"/>
+                <img src="523c4478a8ca147f51d4c13cf868df3f5dac4d6ac3b1d5cf0c37d52c35dcd4c0.png" title=" Automation enters 'pipe' into username input" width="1366"/>
+                <img src="523c4478a8ca147f51d4c13cf868df3f5dac4d6ac3b1d5cf0c37d52c35dcd4c0.png" title=" Automation enters 'pipe' into username input (completed)" width="1366"/>
+                <img src="523c4478a8ca147f51d4c13cf868df3f5dac4d6ac3b1d5cf0c37d52c35dcd4c0.png" title=" Automation enters 'pepe123' into password input" width="1366"/>
+                <img src="9ef172b8892c0090225c758e3ef3d941d13783b4a5a1e15f2fff36dce666bf74.png" title=" Automation enters 'pepe123' into password input" width="1366"/>
+                <img src="9ef172b8892c0090225c758e3ef3d941d13783b4a5a1e15f2fff36dce666bf74.png" title=" Automation enters 'pepe123' into password input (completed)" width="1366"/>
+                <img src="f3ea784ec4b28257bcbeb13f1f1186c09708a7e5488764d6df75e8ed26babf4b.png" title=" Automation clicks on Button to login" width="1366"/>
+                <img src="819db9721785fef2e4f90972c932ec534a0f983f173c6bae5dc20b890a8f7b12.png" title=" Automation clicks on Button to login" width="1366"/>
+                <img src="819db9721785fef2e4f90972c932ec534a0f983f173c6bae5dc20b890a8f7b12.png" title=" Automation clicks on Button to login (completed)" width="1366"/>
+                <img src="819db9721785fef2e4f90972c932ec534a0f983f173c6bae5dc20b890a8f7b12.png" title=" Automation login (completed)" width="1366"/>
+                <img src="c7a3c28d5b033b6197d2dca510c561c34f2cad860fec95423321a4c350a46417.png" title=" Given &quot;userAntonio&quot; logs with credentials (completed)" width="1366"/>
+                <img src="c8db929b1a425c1b4b6207e732d878831e8c96e4ea3bc453d718a388116b597a.png" title=" When buys a list &quot;productsPepe&quot;" width="1366"/>
+                <img src="c8db929b1a425c1b4b6207e732d878831e8c96e4ea3bc453d718a388116b597a.png" title=" Automation buy product" width="1366"/>
+                <img src="779b24fda63420bf9f2f4db1082c351eea29d92bec7298ec624a9b91d2a3be6c.png" title=" Automation wait" width="1366"/>
+                <img src="779b24fda63420bf9f2f4db1082c351eea29d92bec7298ec624a9b91d2a3be6c.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="182e113267db2b9650a82de5c3a91ee1ab0410a4c3660bccb6f9434b66e3c982.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products (completed)" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="5a0db3ebbc1b97d325cfde1804240ba300b4154514b1cc4758b2b9f8461018ea.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="5a0db3ebbc1b97d325cfde1804240ba300b4154514b1cc4758b2b9f8461018ea.png" title=" Automation clicks on Button to add to cart (completed)" width="1366"/>
+                <img src="5a0db3ebbc1b97d325cfde1804240ba300b4154514b1cc4758b2b9f8461018ea.png" title=" Automation wait" width="1366"/>
+                <img src="b3e7cf4f2aecf0c1431ca9597618eb96ab3ae462f4783837dad2d66ec63ecb11.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="b3e7cf4f2aecf0c1431ca9597618eb96ab3ae462f4783837dad2d66ec63ecb11.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home (completed)" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation wait" width="1366"/>
+                <img src="72b39d36dddcca4cb1c5f14f950213bb99c46c78e8fe8ce347c0b11a339e8756.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="9f8ab3bb6f4083bdd410c2d38771a8a449b0ce69fa6a724dcb36b23b2f4d9229.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products (completed)" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="4711e1d0d6baa35218c3fbf12a1cec46abb2cc45157d32da4cf96c93055847ee.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="4711e1d0d6baa35218c3fbf12a1cec46abb2cc45157d32da4cf96c93055847ee.png" title=" Automation clicks on Button to add to cart (completed)" width="1366"/>
+                <img src="4711e1d0d6baa35218c3fbf12a1cec46abb2cc45157d32da4cf96c93055847ee.png" title=" Automation wait" width="1366"/>
+                <img src="e35c22036d29552726c08d89de0b51df81d132a85182889b44cf0c697f822dae.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="e35c22036d29552726c08d89de0b51df81d132a85182889b44cf0c697f822dae.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home (completed)" width="1366"/>
+                <img src="1ecd99bc94fabc4fe93f767bbc7a80b102d74f7084ca6c4003fcc8f45098f792.png" title=" Automation wait" width="1366"/>
+                <img src="1ecd99bc94fabc4fe93f767bbc7a80b102d74f7084ca6c4003fcc8f45098f792.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="9f8ab3bb6f4083bdd410c2d38771a8a449b0ce69fa6a724dcb36b23b2f4d9229.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to select products (completed)" width="1366"/>
+                <img src="5e02022d2fb2008f845a007d2b87387aa8ad5571e5d73f14354f897dfd7fe48f.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="30f0f7691d9c442c80a2db167050417b16cdf279eb6aed869a7c5346452b498e.png" title=" Automation clicks on Button to add to cart" width="1366"/>
+                <img src="30f0f7691d9c442c80a2db167050417b16cdf279eb6aed869a7c5346452b498e.png" title=" Automation clicks on Button to add to cart (completed)" width="1366"/>
+                <img src="30f0f7691d9c442c80a2db167050417b16cdf279eb6aed869a7c5346452b498e.png" title=" Automation wait" width="1366"/>
+                <img src="cbcf49b1fb2c6416dbf496e534c4c63d5144a7e4e4aac87a79f116c15ec3ba17.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="cbcf49b1fb2c6416dbf496e534c4c63d5144a7e4e4aac87a79f116c15ec3ba17.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation clicks on Button to go home (completed)" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" Automation buy product (completed)" width="1366"/>
+                <img src="b8ea76654937fbcbcf5575360f4612f18601cd0ad88e1001f857717acbbf597c.png" title=" When buys a list &quot;productsPepe&quot; (completed)" width="1366"/>
+                <img src="1ecd99bc94fabc4fe93f767bbc7a80b102d74f7084ca6c4003fcc8f45098f792.png" title=" When &quot;userAntonio&quot; shoulds see the product in the cart" width="1366"/>
+                <img src="1ecd99bc94fabc4fe93f767bbc7a80b102d74f7084ca6c4003fcc8f45098f792.png" title=" Automation buy cart" width="1366"/>
+                <img src="1ecd99bc94fabc4fe93f767bbc7a80b102d74f7084ca6c4003fcc8f45098f792.png" title=" Automation clicks on Button to go to cart" width="1366"/>
+                <img src="5be2daaf5a0b99a4e47cd9b045db51c338392a88f3ecf83a1be1edab1a5e6157.png" title=" Automation clicks on Button to go to cart" width="1366"/>
+                <img src="5be2daaf5a0b99a4e47cd9b045db51c338392a88f3ecf83a1be1edab1a5e6157.png" title=" Automation clicks on Button to go to cart (completed)" width="1366"/>
+                <img src="5be2daaf5a0b99a4e47cd9b045db51c338392a88f3ecf83a1be1edab1a5e6157.png" title=" Automation wait" width="1366"/>
+                <img src="419eb6c02fa1a70343c213ea7deefdd900c74c4925c3ba242d42f56928fe511c.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="419eb6c02fa1a70343c213ea7deefdd900c74c4925c3ba242d42f56928fe511c.png" title=" Automation count all products" width="1366"/>
+                <img src="419eb6c02fa1a70343c213ea7deefdd900c74c4925c3ba242d42f56928fe511c.png" title=" Automation count all products (completed)" width="1366"/>
+                <img src="419eb6c02fa1a70343c213ea7deefdd900c74c4925c3ba242d42f56928fe511c.png" title=" Automation clicks on Button to place the order" width="1366"/>
+                <img src="bd9ef5451e77c10a1d20e793296f9d6d7e4b2f00a2cd2f0ae4015fa776d761ac.png" title=" Automation clicks on Button to place the order" width="1366"/>
+                <img src="bd9ef5451e77c10a1d20e793296f9d6d7e4b2f00a2cd2f0ae4015fa776d761ac.png" title=" Automation clicks on Button to place the order (completed)" width="1366"/>
+                <img src="bd9ef5451e77c10a1d20e793296f9d6d7e4b2f00a2cd2f0ae4015fa776d761ac.png" title=" Automation wait" width="1366"/>
+                <img src="5bb8dcf955542e9ec7e804ff4b50e741012ff1e93aec245f9fc5ab7ea34895e2.png" title=" Automation wait (completed)" width="1366"/>
+                <img src="5bb8dcf955542e9ec7e804ff4b50e741012ff1e93aec245f9fc5ab7ea34895e2.png" title=" Automation enters 'pipe' into name input in cart" width="1366"/>
+                <img src="21e499fc9e35da0ff30797de8e50b814f31ec7a57a244033582cadfecdc9c082.png" title=" Automation enters 'pipe' into name input in cart" width="1366"/>
+                <img src="21e499fc9e35da0ff30797de8e50b814f31ec7a57a244033582cadfecdc9c082.png" title=" Automation enters 'pipe' into name input in cart (completed)" width="1366"/>
+                <img src="21e499fc9e35da0ff30797de8e50b814f31ec7a57a244033582cadfecdc9c082.png" title=" Automation enters 'Colombia' into Country input in cart" width="1366"/>
+                <img src="ed7ec8965815efb22f4794fec767a8bfb1b71c4eecc466cd5447265d5dc56cc8.png" title=" Automation enters 'Colombia' into Country input in cart" width="1366"/>
+                <img src="ed7ec8965815efb22f4794fec767a8bfb1b71c4eecc466cd5447265d5dc56cc8.png" title=" Automation enters 'Colombia' into Country input in cart (completed)" width="1366"/>
+                <img src="ed7ec8965815efb22f4794fec767a8bfb1b71c4eecc466cd5447265d5dc56cc8.png" title=" Automation enters 'Medellin' into City input in cart" width="1366"/>
+                <img src="2a1154be21c6894baaf5d10037ac1429dbbe670fe70255ba9ef20338025a1f76.png" title=" Automation enters 'Medellin' into City input in cart" width="1366"/>
+                <img src="2a1154be21c6894baaf5d10037ac1429dbbe670fe70255ba9ef20338025a1f76.png" title=" Automation enters 'Medellin' into City input in cart (completed)" width="1366"/>
+                <img src="2a1154be21c6894baaf5d10037ac1429dbbe670fe70255ba9ef20338025a1f76.png" title=" Automation enters '4131413141313131' into Credit card input in cart" width="1366"/>
+                <img src="8e0bf9d066f2cb2325b238ae17756843bd7e7277b000b24923248843632c9f07.png" title=" Automation enters '4131413141313131' into Credit card input in cart" width="1366"/>
+                <img src="8e0bf9d066f2cb2325b238ae17756843bd7e7277b000b24923248843632c9f07.png" title=" Automation enters '4131413141313131' into Credit card input in cart (completed)" width="1366"/>
+                <img src="8e0bf9d066f2cb2325b238ae17756843bd7e7277b000b24923248843632c9f07.png" title=" Automation enters '6' into expiration month of card input in cart" width="1366"/>
+                <img src="62e55db461ba066b750798e1ea34f02e0087ede49ae148dd17df25d74f6fb3fb.png" title=" Automation enters '6' into expiration month of card input in cart" width="1366"/>
+                <img src="62e55db461ba066b750798e1ea34f02e0087ede49ae148dd17df25d74f6fb3fb.png" title=" Automation enters '6' into expiration month of card input in cart (completed)" width="1366"/>
+                <img src="62e55db461ba066b750798e1ea34f02e0087ede49ae148dd17df25d74f6fb3fb.png" title=" Automation enters '24' into expiration year of card input in cart" width="1366"/>
+                <img src="a1bfbc7d61409d1b3b3abf45e38ddf2763b6de92c7853dbcbe44cd81010a86b1.png" title=" Automation enters '24' into expiration year of card input in cart" width="1366"/>
+                <img src="a1bfbc7d61409d1b3b3abf45e38ddf2763b6de92c7853dbcbe44cd81010a86b1.png" title=" Automation enters '24' into expiration year of card input in cart (completed)" width="1366"/>
+                <img src="a1bfbc7d61409d1b3b3abf45e38ddf2763b6de92c7853dbcbe44cd81010a86b1.png" title=" Automation clicks on Purchase button" width="1366"/>
+                <img src="ada646ee104a4e795d0f39d7ef7f11d077b5aa877459c442137b4b42fd6471c5.png" title=" Automation clicks on Purchase button" width="1366"/>
+                <img src="ada646ee104a4e795d0f39d7ef7f11d077b5aa877459c442137b4b42fd6471c5.png" title=" Automation clicks on Purchase button (completed)" width="1366"/>
+                <img src="ada646ee104a4e795d0f39d7ef7f11d077b5aa877459c442137b4b42fd6471c5.png" title=" Automation clicks on 'OK' button in confirmation message" width="1366"/>
+                <img src="e60f2afe13dc4ef3616b5b886e87d89e73a9a9e524092c8c77604cdc8ec9be7a.png" title=" Automation clicks on 'OK' button in confirmation message" width="1366"/>
+                <img src="e60f2afe13dc4ef3616b5b886e87d89e73a9a9e524092c8c77604cdc8ec9be7a.png" title=" Automation clicks on 'OK' button in confirmation message (completed)" width="1366"/>
+                <img src="e60f2afe13dc4ef3616b5b886e87d89e73a9a9e524092c8c77604cdc8ec9be7a.png" title=" Automation buy cart (completed)" width="1366"/>
+                <img src="39613a83d55ac6b9fdab85c6b5e8cbaa11dd389823dec65f555cf6696f026d4e.png" title=" When &quot;userAntonio&quot; shoulds see the product in the cart (completed)" width="1366"/>
+                <img src="39613a83d55ac6b9fdab85c6b5e8cbaa11dd389823dec65f555cf6696f026d4e.png" title=" Then bbbbbbbbb: <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.2.0</span>
+</div>
+</body>
+</html>

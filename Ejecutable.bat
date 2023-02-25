@@ -1,0 +1,1 @@
+gradle clean test aggregate  --tests *com.demoblaze.automation.feaures.buyProducts.feature --info & cd target/site/serenity & index.html
