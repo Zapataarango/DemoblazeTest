@@ -1,0 +1,23 @@
+#JAVA
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+#INTELLIJ IDEA
+# User-specific stuff:
+.idea/
+*.iml
+out/
+
+#Serenity
+target/
+build/

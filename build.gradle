@@ -1,0 +1,69 @@
+group "com.telefonica.automation"
+version "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.2.0"
+        classpath "io.freefair.gradle:lombok-plugin:5.1.1"
+    }
+}
+
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "net.serenity-bdd.aggregator"
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+apply plugin: "io.freefair.lombok"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    google()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+test {
+    systemProperties System.getProperties()
+    systemProperty "file.encoding", "UTF-8"
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    testLogging.showStandardStreams = true
+}
+
+ext {
+    serenityVersion = "3.2.0"
+}
+
+dependencies {
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.0'
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
+    testImplementation "org.slf4j:slf4j-simple:1.7.36"
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+}
+
+serenity {
+    requirementsDir = "src/test/resources/features"
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
+
