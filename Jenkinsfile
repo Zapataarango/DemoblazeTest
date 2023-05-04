@@ -79,15 +79,7 @@ pipeline {
         }
         stage('Notificar') {
             steps {
-                script {
-                    if (currentBuild.result == 'UNSTABLE')
-                        currentBuild.result = 'FAILURE'
-
-                    if (currentBuild.result == 'SUCCESS')
                         emailext body: 'Resultado exitoso de pipeline de prueba', subject: 'Resultado automatización', to: '${CORREOS}'
-                    if (currentBuild.result == 'FAILURE')
-                        emailext body: 'Resultado FALLIDO de pipeline de prueba', subject: 'Resultado automatización', to: '${CORREOS}'
-                }
             }
         }
     }
