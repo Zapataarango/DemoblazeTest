@@ -35,13 +35,14 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getDriver() {
-        return (Constantes.DEFAULT_BROWSER.equals(Constantes.CHROME)) ? getEdgeDriver() : getChromeDriver();
+        return (Constantes.DEFAULT_BROWSER.equals(Constantes.CHROME)) ?getChromeDriver() : getEdgeDriver();
     }
 
     private static WebDriver getEdgeDriver() {
 
         EdgeOptions options = new EdgeOptions();
         options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+        options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, true);
         options.addArguments("--remote-allow-origins=*");
         return WebDriverManager.edgedriver().capabilities(options).create();
 
