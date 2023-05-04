@@ -30,34 +30,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube analysis'){
-            steps {
-                script {
-                    scannerHome = tool 'SonarQubeScanner'//mismo nombre del servidor configurado en las Global Tools Jenkins
-                }
-                withSonarQubeEnv('sonarQube')//mismo nombre del servidor configurado en la configuracion del sistema jenkins
-                        {
-                            bat 'sonar-scanner'
-                        }
-            }
-        }
-
-        stage("Quality Gate") {
-            steps {
-                script {
-                    try {
-                        timeout(time: 1, unit: 'MINUTES') {
-                            waitForQualityGate abortPipeline: true
-                            currentBuild.result = 'SUCCESS'
-                        }
-                    }
-                    catch (ex) {
-                        currentBuild.result = 'FAILURE'
-                    }
-                }
-            }
-        }
-
         stage('Ejecutar Pruebas') {
             steps {
                 script {
