@@ -22,7 +22,7 @@ public class WebDriverFactory {
     private static WebDriver getChromeDriver() {
 
         ChromeOptions chromeOptions = new ChromeOptions();
-
+        chromeOptions.setCapability(CapabilityType.UNHANDLED_PROMPT_BEHAVIOUR, "accept");
         chromeOptions.addArguments(
                 "--incognito",
                 "--disable-infobars",
@@ -35,14 +35,14 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getDriver() {
-        return (Constantes.DEFAULT_BROWSER.equals(Constantes.CHROME)) ?getChromeDriver() : getEdgeDriver();
+        return (Constantes.DEFAULT_BROWSER.equals(Constantes.CHROME)) ? getChromeDriver() : getEdgeDriver();
     }
 
     private static WebDriver getEdgeDriver() {
 
         EdgeOptions options = new EdgeOptions();
         options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-        options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, true);
+        options.setCapability(CapabilityType.UNHANDLED_PROMPT_BEHAVIOUR, "accept");
         options.addArguments("--remote-allow-origins=*");
         return WebDriverManager.edgedriver().capabilities(options).create();
 
