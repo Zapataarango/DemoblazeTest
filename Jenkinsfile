@@ -24,9 +24,9 @@ pipeline {
         }
         stage('Obtener Fuentes'){
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: 'master']],
+                checkout([$class: 'GitSCM', branches: [[name: rama]],
                           wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
-                        [credentialsId: 'Zapataarango:FZapata-arango123', url: 'https://github.com/Zapataarango/DemoblazeTest.git']]])
+                        [credentialsId: credenciales, url: 'https://github.com/Zapataarango/DemoblazeTest.git']]])
             }
         }
 
