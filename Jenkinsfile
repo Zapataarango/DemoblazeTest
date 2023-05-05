@@ -47,36 +47,6 @@ pipeline {
               }
           }
       }
-//
-      stage('Generar evidencia'){
-          steps{
-              script{
-                  try{
-                      bat  " rename \"${WORKSPACE}\\target\" serenity_${timestamp}"
-                      echo 'Backup de evidencias realizado con exito'
-                      publishHTML([
-                              allowMissing: false,
-                              alwaysLinkToLastBuild: true,
-                              keepAll: true,
-                              reportDir: "${WORKSPACE}//serenity_${timestamp}",
-                              reportFiles: 'index.html',
-                              reportName: 'Evidencias Automatizacion WEB Screenplay',
-                              reportTitles: 'Proyecto Mobiletec Screenplay'
-                      ])
-                      echo 'Reporte Serenity realizado con exito'
-                      archiveArtifacts "**/cucumber.json"
-                      cucumber '**/cucumber.json'
-                      echo 'Reporte Cucumber realizado con exito'
-                  }
-                  catch(e){
-                      echo 'No se realizo el Backup de evidencias'
-                      publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}//target/serenity_${timestamp}", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion WEB Screenplay', reportTitles: 'Proyecto Mobiletec Screenplay'])
-                      echo 'Reporte Html realizado con exito'
-                      currentBuild.result='SUCCESS'
-                  }
-              }
-          }
-      }
         stage('Notificar') {
             steps {
                 script {
@@ -98,6 +68,35 @@ pipeline {
             				<p><b>Para verificar el estado de la ejecucion ingrese a:</b> &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
                                 to: "${CORREOS}"
                         )
+                }
+            }
+        }
+        stage('Generar evidencia'){
+            steps{
+                script{
+                    try{
+                        bat  " rename \"${WORKSPACE}\\target\" serenity_${timestamp}"
+                        echo 'Backup de evidencias realizado con exito'
+                        publishHTML([
+                                allowMissing: false,
+                                alwaysLinkToLastBuild: true,
+                                keepAll: true,
+                                reportDir: "${WORKSPACE}//serenity_${timestamp}",
+                                reportFiles: 'index.html',
+                                reportName: 'Evidencias Automatizacion WEB Screenplay',
+                                reportTitles: 'Proyecto Mobiletec Screenplay'
+                        ])
+                        echo 'Reporte Serenity realizado con exito'
+                        archiveArtifacts "**/cucumber.json"
+                        cucumber '**/cucumber.json'
+                        echo 'Reporte Cucumber realizado con exito'
+                    }
+                    catch(e){
+                        echo 'No se realizo el Backup de evidencias'
+                        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}//target/serenity_${timestamp}", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion WEB Screenplay', reportTitles: 'Proyecto Mobiletec Screenplay'])
+                        echo 'Reporte Html realizado con exito'
+                        currentBuild.result='SUCCESS'
+                    }
                 }
             }
         }
