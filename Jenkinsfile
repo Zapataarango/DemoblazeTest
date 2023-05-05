@@ -79,7 +79,25 @@ pipeline {
         }
         stage('Notificar') {
             steps {
-                        emailext body: 'Resultado exitoso de pipeline de prueba', subject: 'Resultado automatización', to: '${CORREOS}'
+                script {
+                    if (currentBuild.result == 'UNSTABLE')
+                        currentBuild.result = 'FAILURE'
+
+                    if (currentBuild.result == 'SUCCESS')
+                        emailext(
+                                subject: "FRM SCREENPLAY - EJECUCION EXITOSA ESCENARIOS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                                body: """<p><b style="color:MediumSeaGreen;">EJECUCION EXITOSA:</b> Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            				<p><b>Para verificar el estado de la ejecucion ingrese a:</b> &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                                to: "${CORREOS}"
+                        )
+                    if (currentBuild.result == 'FAILURE')
+                        emailext(
+                                subject: "FRM SCREENPLAY - EJECUCION FALLIDA ESCENARIOS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                                body: """<p><b style="color:red;">EJECUCION FALLIDA:</b> Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            				<p><b>Para verificar el estado de la ejecucion ingrese a:</b> &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                                to: "${CORREOS}"
+                        )
+                }
             }
         }
     }
