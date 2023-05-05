@@ -90,6 +90,11 @@ pipeline {
             				<p><b>Para verificar el estado de la ejecucion ingrese a:</b> &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
                                 to: "${CORREOS}"
                         )
+
+                    emailext body: 'Test Message',
+                            subject: 'Test Subject',
+                            to: "${CORREOS}"
+
                     if (currentBuild.result == 'FAILURE')
                         emailext(
                                 subject: "FRM SCREENPLAY - EJECUCION FALLIDA ESCENARIOS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
