@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
 def date = new Date()
 def timestamp = dateFormat.format(date).toString()
-def CORREOS = ""
+def CORREOS = "fzapataa@choucairtesting.com"
 def urlRepo=""
 def rama="master"
 def credenciales=""
